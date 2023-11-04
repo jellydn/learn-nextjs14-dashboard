@@ -17,10 +17,6 @@ P/S: The absolute path for TS/JS file is working fine.
 
 ## Chapter 3 - Optimizing Fonts and Images
 
-### Fonts
-
+- Justify why we need to optimize fonts and images.
 - Explain how to use Google Font with nextjs.
-
-### Images
-
-TBD
+- Explain how to use Image component with Tailwind CSS for swapping image between different screen sizes.
