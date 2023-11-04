@@ -1,4 +1,4 @@
-<h1 align="center">Learn Next.js 14 - App Router Course 👋</h1>
+<h1 align="center">Next.js App Router Course - Starter 👋</h1>
 <p align="center">
   <a href="https://nextjs.org/learn">
     <img alt="Next.js version" src="https://img.shields.io/badge/next.js-%3E%3D14.0.0-blue.svg">
