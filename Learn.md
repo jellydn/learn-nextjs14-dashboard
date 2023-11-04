@@ -14,3 +14,13 @@
 - I don't like the import with '@/' convention for CSS file as it's not working nice. It doesn't jump to file on click.
 
 P/S: The absolute path for TS/JS file is working fine.
+
+## Chapter 3 - Optimizing Fonts and Images
+
+### Fonts
+
+- Explain how to use Google Font with nextjs.
+
+### Images
+
+TBD
