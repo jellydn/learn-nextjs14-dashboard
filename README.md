@@ -30,13 +30,11 @@ npm install
 npm run start
 ```
 
-## Learning Experience
+## Course Insights
 
-Dive into my learning journey and the key takeaways from this course:
+This course provides insights on setting up Next.js with TypeScript, styling with Tailwind CSS, optimizing assets, and more. For detailed notes, refer to:
 
-- [My Learning Notes](./Learning.md)
-
-This document captures insights on setting up Next.js with TypeScript, styling with Tailwind CSS, optimizing assets, and more, along with my personal observations and preferences.
+- [Course Notes](./Learning.md)
 
 ## Show your support
 
