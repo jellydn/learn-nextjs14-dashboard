@@ -178,6 +178,7 @@ async function main() {
   await seedInvoices(client);
   await seedRevenue(client);
 
+  // @ts-ignore
   await client.end();
 }
 
