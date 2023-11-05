@@ -10,7 +10,7 @@ import {
   users,
 } from "../app/lib/placeholder-data.js";
 
-async function seedUsers(client: VercelPoolClient) {
+async function seedUsers(poolClient: VercelPoolClient) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "invoices" table if it doesn't exist
@@ -23,9 +23,23 @@ async function seedUsers(client: VercelPoolClient) {
       );
     `;
 
-    logger.info(`Created "users" table`);
-
-    // Insert data into the "users" table
+    async function seedUsers(poolClient: VercelPoolClient) {
+      try {
+        await poolClient.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+        // Create the "invoices" table if it doesn't exist
+        const createTable = await poolClient.sql`
+          CREATE TABLE IF NOT EXISTS users (
+            id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email TEXT NOT NULL UNIQUE,
+            password TEXT NOT NULL
+          );
+        `;
+    
+        logger.info(`Created "users" table`);
+    
+        // Insert data into the "users" table
+        const insertedUsers = await Promise.all(
     const insertedUsers = await Promise.all(
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -49,12 +63,12 @@ async function seedUsers(client: VercelPoolClient) {
   }
 }
 
-async function seedInvoices(client: VercelPoolClient) {
+async function seedInvoices(poolClient: VercelPoolClient) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    await poolClient.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "invoices" table if it doesn't exist
-    const createTable = await client.sql`
+    const createTable = await poolClient.sql`
     CREATE TABLE IF NOT EXISTS invoices (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
     customer_id UUID NOT NULL,
@@ -89,12 +103,12 @@ async function seedInvoices(client: VercelPoolClient) {
   }
 }
 
-async function seedCustomers(client: VercelPoolClient) {
+async function seedCustomers(poolClient: VercelPoolClient) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    await poolClient.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
     // Create the "customers" table if it doesn't exist
-    const createTable = await client.sql`
+    const createTable = await poolClient.sql`
       CREATE TABLE IF NOT EXISTS customers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
@@ -128,10 +142,10 @@ async function seedCustomers(client: VercelPoolClient) {
   }
 }
 
-async function seedRevenue(client: VercelPoolClient) {
+async function seedRevenue(poolClient: VercelPoolClient) {
   try {
     // Create the "revenue" table if it doesn't exist
-    const createTable = await client.sql`
+    const createTable = await poolClient.sql`
       CREATE TABLE IF NOT EXISTS revenue (
         month VARCHAR(4) NOT NULL UNIQUE,
         revenue INT NOT NULL
@@ -165,14 +179,14 @@ async function seedRevenue(client: VercelPoolClient) {
 
 async function main() {
   logger.info("Seeding database...");
-  const client = await db.connect();
+  const poolClient = await db.connect();
 
-  await seedUsers(client);
-  await seedCustomers(client);
-  await seedInvoices(client);
-  await seedRevenue(client);
+  await seedUsers(poolClient);
+  await seedCustomers(poolClient);
+  await seedInvoices(poolClient);
+  await seedRevenue(poolClient);
 
-  await client.end();
+  await poolClient.end();
 }
 
 main().catch((err) => {
