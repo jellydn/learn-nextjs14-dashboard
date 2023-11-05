@@ -3,7 +3,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "postinstall": "npx husky install",
+    "post_install": "npx husky install",
     "start": "next start"
   },
   "nano-staged": {
@@ -37,7 +37,7 @@
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
     "husky": "8.0.3",
-    "nano-staged": "0.8.0",
+    "nano_staged": "0.8.0",
     "prettier": "3.0.3"
   },
   "engines": {
