@@ -22,7 +22,7 @@ const links = [
 ];
 
 export default function NavLinks() {
-  const pathname = usePathname();
+  const pathName = usePathname();
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function NavLinks() {
             className={clsx(
               "flex gap-2 justify-center items-center p-3 text-sm font-medium bg-gray-50 rounded-md md:flex-none md:justify-start md:p-2 md:px-3 hover:text-blue-600 h-[48px] grow hover:bg-sky-100",
               {
-                "bg-sky-100 text-blue-600": pathname === link.href,
+                "bg-sky-100 text-blue-600": pathName === link.href,
               },
             )}
           >
