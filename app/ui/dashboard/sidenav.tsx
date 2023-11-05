@@ -20,7 +20,7 @@ export default function SideNav() {
         <form>
           <button
             type="button"
-            className="flex gap-2 justify-center items-center p-3 text-sm font-medium bg-gray-50 rounded-md md:flex-none md:justify-start md:p-2 md:px-3 hover:text-blue-600 h-[48px] grow hover:bg-sky-100"
+            className="flex gap-2 justify-center items-center p-3 w-full text-sm font-medium bg-gray-50 rounded-md md:flex-none md:justify-start md:p-2 md:px-3 hover:text-blue-600 h-[48px] grow hover:bg-sky-100"
           >
             <PowerIcon className="w-6" />
             <div className="hidden md:block">Sign Out</div>
