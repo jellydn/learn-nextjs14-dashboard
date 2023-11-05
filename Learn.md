@@ -27,3 +27,8 @@ P/S: The absolute path for TS/JS file is working fine.
 - Introduce root layout vs page layout concept.
   - Use root layout for modify html and body tag.
   - Page layout is for each page/route.
+
+## Chapter 5 - Navigating between pages
+
+- Explain how to use Link component and how to code splitting works.
+- Nice introduction for `use client` for detecting active link.
