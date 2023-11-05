@@ -32,3 +32,9 @@ P/S: The absolute path for TS/JS file is working fine.
 
 - Explain how to use Link component and how to code splitting works.
 - Nice introduction for `use client` for detecting active link.
+
+## Chapter 6 - DB
+
+- This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
+- I have migrated the seed.js to typescript and also add logger to lib folder.
+- Skip this chapter if already know how to use Postgres. Or use something like Prisma/Drizzle instead.
