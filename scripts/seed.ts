@@ -1,4 +1,4 @@
-import logger from "@/app/lib/logger.js";
+import logger from "../lib/logger.js";
 import { VercelPoolClient, db } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 import "dotenv/config";
@@ -8,12 +8,12 @@ import {
   invoices,
   revenue,
   users,
-} from "../app/lib/placeholder-data.js";
+} from "../lib/placeholder-data.js";
 
 async function seedUsers(client: VercelPoolClient) {
   try {
+    // Create the "users" table if it doesn't exist
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "invoices" table if it doesn't exist
     const createTable = await client.sql`
       CREATE TABLE IF NOT EXISTS users (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -22,7 +22,6 @@ async function seedUsers(client: VercelPoolClient) {
         password TEXT NOT NULL
       );
     `;
-
     logger.info(`Created "users" table`);
 
     // Insert data into the "users" table
@@ -51,9 +50,8 @@ async function seedUsers(client: VercelPoolClient) {
 
 async function seedInvoices(client: VercelPoolClient) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
     // Create the "invoices" table if it doesn't exist
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     const createTable = await client.sql`
     CREATE TABLE IF NOT EXISTS invoices (
     id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -62,8 +60,7 @@ async function seedInvoices(client: VercelPoolClient) {
     status VARCHAR(255) NOT NULL,
     date DATE NOT NULL
   );
-`;
-
+    `;
     logger.info(`Created "invoices" table`);
 
     // Insert data into the "invoices" table
@@ -91,10 +88,20 @@ async function seedInvoices(client: VercelPoolClient) {
 
 async function seedCustomers(client: VercelPoolClient) {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
     // Create the "customers" table if it doesn't exist
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS customers (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        image_url VARCHAR(255) NOT NULL
+      );
+    `;
+    logger.info(`Created "customers" table`);
+
+    // Insert data into the "customers" table
+    const insertedCustomers = await Promise.all(
       CREATE TABLE IF NOT EXISTS customers (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
@@ -137,7 +144,6 @@ async function seedRevenue(client: VercelPoolClient) {
         revenue INT NOT NULL
       );
     `;
-
     logger.info(`Created "revenue" table`);
 
     // Insert data into the "revenue" table
