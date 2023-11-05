@@ -1,4 +1,5 @@
-import { db } from "@vercel/postgres";
+import logger from "@/app/lib/logger.js";
+import { VercelPoolClient, db } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 import "dotenv/config";
 
@@ -9,7 +10,7 @@ import {
   users,
 } from "../app/lib/placeholder-data.js";
 
-async function seedUsers(client) {
+async function seedUsers(client: VercelPoolClient) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "invoices" table if it doesn't exist
@@ -22,7 +23,7 @@ async function seedUsers(client) {
       );
     `;
 
-    console.log(`Created "users" table`);
+    logger.info(`Created "users" table`);
 
     // Insert data into the "users" table
     const insertedUsers = await Promise.all(
@@ -36,19 +37,19 @@ async function seedUsers(client) {
       }),
     );
 
-    console.log(`Seeded ${insertedUsers.length} users`);
+    logger.info(`Seeded ${insertedUsers.length} users`);
 
     return {
       createTable,
       users: insertedUsers,
     };
   } catch (error) {
-    console.error("Error seeding users:", error);
+    logger.error("Error seeding users:", error);
     throw error;
   }
 }
 
-async function seedInvoices(client) {
+async function seedInvoices(client: VercelPoolClient) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
@@ -63,7 +64,7 @@ async function seedInvoices(client) {
   );
 `;
 
-    console.log(`Created "invoices" table`);
+    logger.info(`Created "invoices" table`);
 
     // Insert data into the "invoices" table
     const insertedInvoices = await Promise.all(
@@ -76,19 +77,19 @@ async function seedInvoices(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedInvoices.length} invoices`);
+    logger.info(`Seeded ${insertedInvoices.length} invoices`);
 
     return {
       createTable,
       invoices: insertedInvoices,
     };
   } catch (error) {
-    console.error("Error seeding invoices:", error);
+    logger.error("Error seeding invoices:", error);
     throw error;
   }
 }
 
-async function seedCustomers(client) {
+async function seedCustomers(client: VercelPoolClient) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
@@ -102,7 +103,7 @@ async function seedCustomers(client) {
       );
     `;
 
-    console.log(`Created "customers" table`);
+    logger.info(`Created "customers" table`);
 
     // Insert data into the "customers" table
     const insertedCustomers = await Promise.all(
@@ -115,19 +116,19 @@ async function seedCustomers(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedCustomers.length} customers`);
+    logger.info(`Seeded ${insertedCustomers.length} customers`);
 
     return {
       createTable,
       customers: insertedCustomers,
     };
   } catch (error) {
-    console.error("Error seeding customers:", error);
+    logger.error("Error seeding customers:", error);
     throw error;
   }
 }
 
-async function seedRevenue(client) {
+async function seedRevenue(client: VercelPoolClient) {
   try {
     // Create the "revenue" table if it doesn't exist
     const createTable = await client.sql`
@@ -137,7 +138,7 @@ async function seedRevenue(client) {
       );
     `;
 
-    console.log(`Created "revenue" table`);
+    logger.info(`Created "revenue" table`);
 
     // Insert data into the "revenue" table
     const insertedRevenue = await Promise.all(
@@ -150,19 +151,20 @@ async function seedRevenue(client) {
       ),
     );
 
-    console.log(`Seeded ${insertedRevenue.length} revenue`);
+    logger.info(`Seeded ${insertedRevenue.length} revenue`);
 
     return {
       createTable,
       revenue: insertedRevenue,
     };
   } catch (error) {
-    console.error("Error seeding revenue:", error);
+    logger.error("Error seeding revenue:", error);
     throw error;
   }
 }
 
 async function main() {
+  logger.info("Seeding database...");
   const client = await db.connect();
 
   await seedUsers(client);
@@ -174,8 +176,5 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error(
-    "An error occurred while attempting to seed the database:",
-    err,
-  );
+  logger.error("An error occurred while attempting to seed the database:", err);
 });
