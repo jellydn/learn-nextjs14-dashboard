@@ -3,7 +3,14 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "postinstall": "npx husky install",
     "start": "next start"
+  },
+  "nano-staged": {
+    "*.{js,ts,json,md}": "prettier --write",
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
@@ -29,6 +36,8 @@
     "dotenv": "16.3.1",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
+    "husky": "8.0.3",
+    "nano-staged": "0.8.0",
     "prettier": "3.0.3"
   },
   "engines": {
