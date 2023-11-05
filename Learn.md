@@ -23,4 +23,7 @@ P/S: The absolute path for TS/JS file is working fine.
 
 ## Chapter 4 - Layouts and Pages
 
-TBD
+- Good visual explanation for app layout and pages.
+- Introduce root layout vs page layout concept.
+  - Use root layout for modify html and body tag.
+  - Page layout is for each page/route.
