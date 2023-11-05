@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { lusitana } from "./ui/fonts";
-import styles from "./ui/home.module.css";
+import styles from "@/app/ui/home.module.css";
 
 export default function Page() {
   return (
