@@ -2,3 +2,5 @@ reponse
 ILIKE
 Lusitana
 sidenav
+pino
+trivago
