@@ -102,18 +102,6 @@ async function seedCustomers(client: VercelPoolClient) {
 
     // Insert data into the "customers" table
     const insertedCustomers = await Promise.all(
-      CREATE TABLE IF NOT EXISTS customers (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        image_url VARCHAR(255) NOT NULL
-      );
-    `;
-
-    logger.info(`Created "customers" table`);
-
-    // Insert data into the "customers" table
-    const insertedCustomers = await Promise.all(
       customers.map(
         (customer) => client.sql`
         INSERT INTO customers (id, name, email, image_url)
