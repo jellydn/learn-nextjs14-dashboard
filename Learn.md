@@ -38,3 +38,8 @@ P/S: The absolute path for TS/JS file is working fine.
 - This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
 - I have migrated the seed.js to typescript and also add logger to lib folder.
 - Skip this chapter if already know how to use Postgres. Or use something like Prisma/Drizzle instead.
+
+## Chapter 7 - Fetching data
+
+- Not focus on data fetching, need to refer to [nextjs documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
+- It seems the main focus is about `Server Components` which is [React beta feature](https://react.dev/reference/react/use-server).
