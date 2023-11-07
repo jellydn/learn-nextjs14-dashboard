@@ -1,6 +1,7 @@
-import AcmeLogo from "@/app/ui/acme-logo";
 import Image from "next/image";
 import Link from "next/link";
+
+import AcmeLogo from "@/app/ui/acme-logo";
 
 import { lusitana } from "./ui/fonts";
 // @ts-ignore it should be okay
