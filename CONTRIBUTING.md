@@ -13,3 +13,6 @@ Commit messages are an essential part of the development process. They provide a
 - Do not end the message with a period.
 
 For more information about the project and how to get it up and running, please refer to the [README.md](./README.md) file.
+
+- Every commit should include a commit message. Commit messages are crucial for understanding the changes made in each commit and maintaining a clean and understandable codebase.
+- An effective commit message should clearly describe the changes made in the commit and their purpose. It should be concise, written in the imperative mood, start with a capital letter, and not end with a period.
