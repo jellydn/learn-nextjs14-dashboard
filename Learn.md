@@ -43,3 +43,17 @@ P/S: The absolute path for TS/JS file is working fine.
 
 - Not focus on data fetching, need to refer to [nextjs documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
 - It seems the main focus is about `Server Components` which is [React beta feature](https://react.dev/reference/react/use-server).
+
+## Chapter 8 - Static and Dynamic Rendering
+
+- This chapter uses a unstable feature to support dynamic rendering.
+
+```typescript
+import { unstable_noStore as noStore } from "next/cache";
+
+// Add noStore() here prevent the response from being cached.
+// This is equivalent to in fetch(..., {cache: 'no-store'}).
+noStore();
+```
+
+- When use Promise.all, the slowest promise will determine the speed of the response.
