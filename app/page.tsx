@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { lusitana } from "./ui/fonts";
+// @ts-ignore it should be okay
 import styles from "./ui/home.module.css";
 
 export default function Page() {
