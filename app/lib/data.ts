@@ -14,21 +14,18 @@ import {
 import logger from "./logger";
 import { formatCurrency } from "./utils";
 
+/**
+ * Fetches revenue data from the database.
+ * 
+ * @returns {Promise<Revenue[]>} An array of Revenue objects.
+ */
 export async function fetchRevenue() {
-  // Add noStore() here prevent the response from being cached.
-  // This is equivalent to in fetch(..., {cache: 'no-store'}).
+  // The noStore() function call is used to prevent the response from being cached,
+  // ensuring that the most recent revenue data is always fetched from the database.
   noStore();
 
   try {
-    // Artificially delay a response for demo purposes.
-    // Don't do this in real life :)
-
-    // logger.info("Fetching revenue data...");
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
-
     const data = await sql<Revenue>`SELECT * FROM revenue`;
-
-    // logger.info("Data fetch complete after 3 seconds.");
 
     return data.rows;
   } catch (error) {
@@ -37,7 +34,14 @@ export async function fetchRevenue() {
   }
 }
 
+/**
+ * Fetches the latest invoices from the database.
+ * 
+ * @returns {Promise<LatestInvoiceRaw[]>} An array of LatestInvoiceRaw objects.
+ */
 export async function fetchLatestInvoices() {
+  // The noStore() function call is used to prevent the response from being cached,
+  // ensuring that the most recent invoice data is always fetched from the database.
   noStore();
 
   try {
@@ -59,13 +63,18 @@ export async function fetchLatestInvoices() {
   }
 }
 
+/**
+ * Fetches card data from the database.
+ * 
+ * @returns {Promise<Object>} An object containing the number of invoices, number of customers,
+ * total paid invoices, and total pending invoices.
+ */
 export async function fetchCardData() {
+  // The noStore() function call is used to prevent the response from being cached,
+  // ensuring that the most recent card data is always fetched from the database.
   noStore();
 
   try {
-    // You can probably combine these into a single SQL query
-    // However, we are intentionally splitting them to demonstrate
-    // how to initialize multiple queries in parallel with JS.
     const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
     const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
     const invoiceStatusPromise = sql`SELECT
