@@ -1,9 +1,7 @@
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
-import {
-  AtSymbolIcon,
-  ExclamationCircleIcon,
-  KeyIcon,
-} from "@heroicons/react/24/outline";
+import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/outline";
+
+import Link from "next/link";
 
 import { lusitana } from "@/app/ui/fonts";
 
@@ -68,8 +66,10 @@ export default function LoginForm() {
 
 function LoginButton() {
   return (
-    <Button className="mt-4 w-full">
-      Log in <ArrowRightIcon className="ml-auto w-5 h-5 text-gray-50" />
-    </Button>
+    <Link href="/dashboard">
+      <Button className="mt-4 w-full">
+        Log in <ArrowRightIcon className="ml-auto w-5 h-5 text-gray-50" />
+      </Button>
+    </Link>
   );
 }

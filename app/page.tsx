@@ -33,7 +33,6 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex justify-center items-center p-6 md:py-12 md:px-28 md:w-3/5">
-          {/* Add Hero Images Here */}
           <Image
             src="/hero-desktop.png"
             width={1000}
