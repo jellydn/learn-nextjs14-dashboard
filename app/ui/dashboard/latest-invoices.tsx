@@ -23,11 +23,10 @@ export default function LatestInvoices({ latestInvoices }: LatestInvoicesProps) 
           Latest Invoices
         </h2>
         <div className="flex flex-col justify-between p-4 bg-gray-50 rounded-xl grow">
-      <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Latest Invoices
-      </h2>
-      <div className="flex flex-col justify-between p-4 bg-gray-50 rounded-xl grow">
-        <div className="px-6 bg-white">
+          <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+            Latest Invoices
+          </h2>
+          <div className="px-6 bg-white">
           {latestInvoices.map((invoice, i) => {
             return (
               <div
