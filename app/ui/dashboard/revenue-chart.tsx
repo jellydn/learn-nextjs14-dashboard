@@ -4,17 +4,27 @@ import { fetchRevenue } from "@/app/lib/data";
 import { generateYAxis } from "@/app/lib/utils";
 import { lusitana } from "@/app/ui/fonts";
 
-export default async function revenueChart() {
-  const revenue = await fetchRevenue();
-  const chartHeight = 350;
+import { useState, useEffect } from "react";
 
-  const { yAxisLabels, topLabel } = generateYAxis(revenue);
-
-  if (!revenue || revenue.length === 0) {
-    return <p className="mt-4 text-gray-400">No data available.</p>;
-  }
-
-  return (
+export default function revenueChart() {
+  const [revenueData, setRevenueData] = useState(null);
+  useEffect(() => {
+    const fetchRevenueData = async () => {
+      const data = await fetchRevenue();
+      setRevenueData(data);
+    };
+    fetchRevenueData();
+  }, []);
+  export default async function revenueChart() {
+    const chartHeight = 350;
+  
+    if (!revenueData || revenueData.length === 0) {
+      return <p className="mt-4 text-gray-400">No data available.</p>;
+    }
+  
+    const { yAxisLabels, topLabel } = generateYAxis(revenueData);
+  
+    return (
     <div className="w-full md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Recent Revenue
