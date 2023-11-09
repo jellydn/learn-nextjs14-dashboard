@@ -1,6 +1,21 @@
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
-export default async function latestInvoices() {
-  const latestInvoices = await fetchLatestInvoices();
+import clsx from "clsx";
+import Image from "next/image";
+import { fetchLatestInvoices } from "@/app/lib/data";
+import { lusitana } from "@/app/ui/fonts";
+import { useState, useEffect } from "react";
+
+export default function latestInvoices() {
+  const [latestInvoices, setLatestInvoices] = useState([]);
+
+  useEffect(() => {
+    const fetchInvoices = async () => {
+      const invoices = await fetchLatestInvoices();
+      setLatestInvoices(invoices);
+    };
+
+    fetchInvoices();
+  }, []);
 
   return (
     <div className="flex flex-col w-full md:col-span-4 lg:col-span-4">
