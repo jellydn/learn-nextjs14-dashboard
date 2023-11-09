@@ -4,13 +4,7 @@ import { fetchRevenue } from "@/app/lib/data";
 import { generateYAxis } from "@/app/lib/utils";
 import { lusitana } from "@/app/ui/fonts";
 
-// This component is representational only.
-// For data visualization UI, check out:
-// https://www.tremor.so/
-// https://www.chartjs.org/
-// https://airbnb.io/visx/
-
-export default async function RevenueChart() {
+export default async function revenueChart() {
   const revenue = await fetchRevenue();
   const chartHeight = 350;
 
