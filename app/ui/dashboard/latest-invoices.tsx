@@ -3,14 +3,20 @@ import clsx from "clsx";
 
 import Image from "next/image";
 
-import { fetchLatestInvoices } from "@/app/lib/data";
 import { lusitana } from "@/app/ui/fonts";
 
-export default async function LatestInvoices() {
-  const latestInvoices = await fetchLatestInvoices();
-
-  return (
-    <div className="flex flex-col w-full md:col-span-4 lg:col-span-4">
+type Invoice = {
+  id: string;
+  image_url: string;
+  name: string;
+  email: string;
+  export default function LatestInvoices({ latestInvoices }: LatestInvoicesProps) {
+    return (
+      <div className="flex flex-col w-full md:col-span-4 lg:col-span-4">
+        <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+          Latest Invoices
+        </h2>
+        <div className="flex flex-col justify-between p-4 bg-gray-50 rounded-xl grow">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
         Latest Invoices
       </h2>
