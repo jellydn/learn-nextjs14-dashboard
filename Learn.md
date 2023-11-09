@@ -57,3 +57,8 @@ noStore();
 ```
 
 - When use Promise.all, the slowest promise will determine the speed of the response.
+
+## Chapter 9 - Streaming
+
+- Nice to see how to use skeleton loading with Streaming in nextjs.
+- Good to introduce new concept for route: Route Groups
