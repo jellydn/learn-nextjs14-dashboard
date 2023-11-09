@@ -10,7 +10,13 @@ type Invoice = {
   image_url: string;
   name: string;
   email: string;
-  export default function LatestInvoices({ latestInvoices }: LatestInvoicesProps) {
+};
+
+type LatestInvoicesProps = {
+  latestInvoices: Invoice[];
+};
+
+export default function LatestInvoices({ latestInvoices }: LatestInvoicesProps) {
     return (
       <div className="flex flex-col w-full md:col-span-4 lg:col-span-4">
         <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
