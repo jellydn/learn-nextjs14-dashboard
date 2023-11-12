@@ -1,15 +1,23 @@
+"use client";
+
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
-import { AtSymbolIcon, KeyIcon } from "@heroicons/react/24/outline";
+import {
+  AtSymbolIcon,
+  ExclamationCircleIcon,
+  KeyIcon,
+} from "@heroicons/react/24/outline";
+import { useFormState, useFormStatus } from "react-dom";
 
-import Link from "next/link";
-
+import { authenticate } from "@/app/lib/actions";
 import { lusitana } from "@/app/ui/fonts";
 
 import { Button } from "./button";
 
 export default function LoginForm() {
+  const [state, dispatch] = useFormState(authenticate, undefined);
+
   return (
-    <form className="space-y-3">
+    <form action={dispatch} className="space-y-3">
       <div className="flex-1 px-6 pt-8 pb-4 bg-gray-50 rounded-lg">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please log in to continue.
@@ -57,19 +65,31 @@ export default function LoginForm() {
         </div>
         <LoginButton />
         <div className="flex items-end space-x-1 h-8">
-          {/* Add form errors here */}
+          {state === "CredentialSignin" && (
+            <>
+              <ExclamationCircleIcon className="w-5 h-5 text-red-500" />
+              <p aria-live="polite" className="text-sm text-red-500">
+                Invalid credentials
+              </p>
+            </>
+          )}
         </div>
+
+        <p className="text-xs text-gray-500 hover:text-gray-700">
+          Hints: demo account is <i>user@nextmail.com</i> and password is{" "}
+          <i>123456</i>.
+        </p>
       </div>
     </form>
   );
 }
 
 function LoginButton() {
+  const { pending } = useFormStatus();
+
   return (
-    <Link href="/dashboard">
-      <Button className="mt-4 w-full">
-        Log in <ArrowRightIcon className="ml-auto w-5 h-5 text-gray-50" />
-      </Button>
-    </Link>
+    <Button className="mt-4 w-full" aria-disabled={pending}>
+      Log in <ArrowRightIcon className="ml-auto w-5 h-5 text-gray-50" />
+    </Button>
   );
 }
