@@ -87,5 +87,10 @@ Actually, Remix has implemented similar feature for a [long time](https://x.com/
 
 ## Chapter 14 - Validation & Accessibility
 
-- How to use experimental hook: [use-form-state](https://react.dev/reference/react-dom/hooks/useFormState#useformstate) for validation.
+- How to use experimental hook: [useFormState](https://react.dev/reference/react-dom/hooks/useFormState#useformstate) for validation.
 - Nice to introduce accessibility concept with `aria-describedby`.
+
+## Chapter 15 - Authentication
+
+- How to use next-auth for authentication.
+- This also bring new hook for form: [useFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus)
