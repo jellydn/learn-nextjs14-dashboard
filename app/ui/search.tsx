@@ -15,6 +15,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
   const handleSearch = useDebouncedCallback((keyword: string) => {
     logger.info("Searching for", keyword);
     const params = new URLSearchParams(searchParams);
+    params.set("page", "1"); // Reset page to 1
+
     if (keyword) {
       params.set("query", keyword);
     } else {
