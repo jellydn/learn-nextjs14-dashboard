@@ -70,3 +70,8 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 
 - This chapter is about how to implement search and pagination.
 - Good to introduce `use-debounce` library for handle debouncing for search input
+
+## Chapter 12 - Mutating Data
+
+- Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
+- This chapter is about how to use server action to mutate data.
