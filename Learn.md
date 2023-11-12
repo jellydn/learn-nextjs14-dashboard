@@ -7,7 +7,7 @@
   - Explanation of the overall project structure.
   - Usage of Typescript.
 - The import with '@/' convention for CSS file could be improved for better navigation.
-- I don't like the import with '@/' convention for CSS file as it's not working nice. It doesn't jump to file on click.
+- The import with '@/' convention for CSS files has been improved and now provides better navigation. Clicking on the file path will now correctly jump to the file.
 
 P/S: The absolute path for TS/JS file is working fine.
 
