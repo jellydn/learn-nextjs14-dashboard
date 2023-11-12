@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 import Link from "next/link";
@@ -16,7 +17,7 @@ export function CreateInvoice() {
   );
 }
 
-export function UpdateInvoice({ id }: { id: string }) {
+export function UpdateInvoice({ id }: { readonly id: string }) {
   return (
     <Link
       href={`/dashboard/invoices/${id}/edit`}
@@ -27,20 +28,15 @@ export function UpdateInvoice({ id }: { id: string }) {
   );
 }
 
-export function DeleteInvoice({ id }: { id: string }) {
+export function DeleteInvoice({ id }: { readonly id: string }) {
   const deleteInvoiceWithId = deleteInvoice.bind(null, id);
 
   return (
-    <>
-      <form action={deleteInvoiceWithId}>
-        <button
-          type="submit"
-          className="p-2 rounded-md border hover:bg-gray-100"
-        >
-          <span className="sr-only">Delete</span>
-          <TrashIcon className="w-5" />
-        </button>
-      </form>
-    </>
+    <form action={deleteInvoiceWithId}>
+      <button type="submit" className="p-2 rounded-md border hover:bg-gray-100">
+        <span className="sr-only">Delete</span>
+        <TrashIcon className="w-5" />
+      </button>
+    </form>
   );
 }

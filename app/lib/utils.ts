@@ -1,11 +1,10 @@
-import { Revenue } from "./definitions";
+import { type Revenue } from "./definitions";
 
-export const formatCurrency = (amount: number) => {
-  return (amount / 100).toLocaleString("en-US", {
+export const formatCurrency = (amount: number) =>
+  (amount / 100).toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   });
-};
 
 export const formatDateToLocal = (dateStr: string, locale = "en-US") => {
   const date = new Date(dateStr);

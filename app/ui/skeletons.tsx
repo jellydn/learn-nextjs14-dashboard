@@ -108,31 +108,31 @@ export function TableRowSkeleton() {
       {/* Customer Name and Image */}
       <td className="overflow-hidden relative py-3 pr-3 pl-6 whitespace-nowrap">
         <div className="flex gap-3 items-center">
-          <div className="w-8 h-8 bg-gray-100 rounded-full"></div>
-          <div className="w-24 h-6 bg-gray-100 rounded"></div>
+          <div className="w-8 h-8 bg-gray-100 rounded-full" />
+          <div className="w-24 h-6 bg-gray-100 rounded" />
         </div>
       </td>
       {/* Email */}
       <td className="py-3 px-3 whitespace-nowrap">
-        <div className="w-32 h-6 bg-gray-100 rounded"></div>
+        <div className="w-32 h-6 bg-gray-100 rounded" />
       </td>
       {/* Amount */}
       <td className="py-3 px-3 whitespace-nowrap">
-        <div className="w-16 h-6 bg-gray-100 rounded"></div>
+        <div className="w-16 h-6 bg-gray-100 rounded" />
       </td>
       {/* Date */}
       <td className="py-3 px-3 whitespace-nowrap">
-        <div className="w-16 h-6 bg-gray-100 rounded"></div>
+        <div className="w-16 h-6 bg-gray-100 rounded" />
       </td>
       {/* Status */}
       <td className="py-3 px-3 whitespace-nowrap">
-        <div className="w-16 h-6 bg-gray-100 rounded"></div>
+        <div className="w-16 h-6 bg-gray-100 rounded" />
       </td>
       {/* Actions */}
       <td className="py-3 pr-3 pl-6 whitespace-nowrap">
         <div className="flex gap-3 justify-end">
-          <div className="bg-gray-100 rounded h-[38px] w-[38px]"></div>
-          <div className="bg-gray-100 rounded h-[38px] w-[38px]"></div>
+          <div className="bg-gray-100 rounded h-[38px] w-[38px]" />
+          <div className="bg-gray-100 rounded h-[38px] w-[38px]" />
         </div>
       </td>
     </tr>
@@ -144,19 +144,19 @@ export function InvoicesMobileSkeleton() {
     <div className="p-4 mb-2 w-full bg-white rounded-md">
       <div className="flex justify-between items-center pb-8 border-b border-gray-100">
         <div className="flex items-center">
-          <div className="mr-2 w-8 h-8 bg-gray-100 rounded-full"></div>
-          <div className="w-16 h-6 bg-gray-100 rounded"></div>
+          <div className="mr-2 w-8 h-8 bg-gray-100 rounded-full" />
+          <div className="w-16 h-6 bg-gray-100 rounded" />
         </div>
-        <div className="w-16 h-6 bg-gray-100 rounded"></div>
+        <div className="w-16 h-6 bg-gray-100 rounded" />
       </div>
       <div className="flex justify-between items-center pt-4 w-full">
         <div>
-          <div className="w-16 h-6 bg-gray-100 rounded"></div>
-          <div className="mt-2 w-24 h-6 bg-gray-100 rounded"></div>
+          <div className="w-16 h-6 bg-gray-100 rounded" />
+          <div className="mt-2 w-24 h-6 bg-gray-100 rounded" />
         </div>
         <div className="flex gap-2 justify-end">
-          <div className="w-10 h-10 bg-gray-100 rounded"></div>
-          <div className="w-10 h-10 bg-gray-100 rounded"></div>
+          <div className="w-10 h-10 bg-gray-100 rounded" />
+          <div className="w-10 h-10 bg-gray-100 rounded" />
         </div>
       </div>
     </div>
