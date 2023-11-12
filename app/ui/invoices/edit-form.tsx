@@ -1,4 +1,3 @@
- 
 "use client";
 
 import {
@@ -35,6 +34,7 @@ export default function EditInvoiceForm({
           </label>
           <div className="relative">
             <select
+              required
               id="customer"
               name="customerId"
               className="block py-2 pl-10 w-full text-sm rounded-md border border-gray-200 peer outline-2 placeholder:text-gray-500"
@@ -61,6 +61,7 @@ export default function EditInvoiceForm({
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
+                required
                 id="amount"
                 name="amount"
                 type="number"
@@ -82,6 +83,7 @@ export default function EditInvoiceForm({
             <div className="flex gap-4">
               <div className="flex items-center">
                 <input
+                  required
                   id="pending"
                   name="status"
                   type="radio"
@@ -98,6 +100,7 @@ export default function EditInvoiceForm({
               </div>
               <div className="flex items-center">
                 <input
+                  required
                   id="paid"
                   name="status"
                   type="radio"
