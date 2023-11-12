@@ -3,14 +3,10 @@
 ## Chapter 1 - Setup new project
 
 - Setup Nextjs 14 with dashboard template.
-- A few points I like about this chapter:
-  - Explain overall project structure.
-  - Use Typescript.
-
-## Chapter 2 - CSS styling
-
-- Explain how to use Tailwind CSS or CSS Modules.
-- Good to introduce `clsx` to combine multiple class names.
+- Key points from this chapter:
+  - Explanation of the overall project structure.
+  - Usage of Typescript.
+- The import with '@/' convention for CSS file could be improved for better navigation.
 - I don't like the import with '@/' convention for CSS file as it's not working nice. It doesn't jump to file on click.
 
 P/S: The absolute path for TS/JS file is working fine.
@@ -36,8 +32,8 @@ P/S: The absolute path for TS/JS file is working fine.
 ## Chapter 6 - DB
 
 - This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
-- I have migrated the seed.js to typescript and also add logger to lib folder.
-- Skip this chapter if already know how to use Postgres. Or use something like Prisma/Drizzle instead.
+- The seed.js has been migrated to typescript and a logger has been added to the lib folder.
+- This chapter can be skipped if already familiar with using Postgres. Alternatives like Prisma/Drizzle can be considered.
 
 ## Chapter 7 - Fetching data
 
@@ -68,7 +64,7 @@ noStore();
 - This is a new experimental feature in nextjs.
 - They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
 
-Actually, Remix has implemented similar feature for a [long time](https://x.com/ryanflorence/status/1719743537380786198?s=20). Definitely worth to check out this copare: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
 
 ## Chapter 11 - Search and Pagination
 
