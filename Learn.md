@@ -1,5 +1,7 @@
 # Learn Nextjs 14
 
+- This is an early iteration. Content and code may change.
+
 ## Chapter 1 - Setup new project
 
 - Setup Nextjs 14 with dashboard template.
