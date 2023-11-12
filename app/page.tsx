@@ -4,7 +4,6 @@ import Link from "next/link";
 import AcmeLogo from "@/app/ui/acme-logo";
 
 import { lusitana } from "./ui/fonts";
-// @ts-expect-error it should be okay
 import styles from "./ui/home.module.css";
 
 export default function Page() {
