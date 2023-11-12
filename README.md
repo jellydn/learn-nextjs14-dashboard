@@ -38,6 +38,11 @@ Dive into my learning journey and the key takeaways from this course:
 
 This document captures insights on setting up Next.js with TypeScript, styling with Tailwind CSS, optimizing assets, and more, along with my personal observations and preferences.
 
+## References
+
+- [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+- [Building towards a new default rendering model for web applications – Vercel](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
