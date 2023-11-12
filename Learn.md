@@ -1,3 +1,4 @@
+```markdown
 # Learn Nextjs 14
 
 ## Chapter 1 - Setup new project (Setup Nextjs 14 with dashboard template and improved CSS file import convention)
@@ -14,8 +15,25 @@ P/S: The absolute path for TS/JS file is working fine.
 - Justify why we need to optimize fonts and images.
 - Explain how to use Google Font with nextjs.
 - Explain how to use Image component with Tailwind CSS for swapping image between different screen sizes.
+```
 
-## Chapter 9 - Streaming (Part 2)
+```markdown
+## Chapter 12 - Mutating Data (Server action)
+
+- Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
+
+- This is a new experimental feature in nextjs.
+- They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
+
+Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+
+## Chapter 11 - Search and Pagination (Part 2)
+
+- This chapter is about how to implement search and pagination.
+- Good to introduce `use-debounce` library for handle debouncing for search input
+
+## Chapter 12 - Mutating Data (Server action)
+```
 
 - Nice to see how to use skeleton loading with Streaming in nextjs.
 - Good to introduce new concept for route: Route Groups
@@ -29,6 +47,7 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 
 ## Chapter 11 - Search and Pagination
 
+```markdown
 - This chapter is about how to implement search and pagination.
 
 - Good visual explanation for app layout and pages.
@@ -43,13 +62,26 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 - Explain how to use Image component with Tailwind CSS for swapping image between different screen sizes.
 
 ## Chapter 4 - Layouts and Pages (Part 2 - Introduced root layout and page layout concepts for app layout and pages)
+```
+
+- Nice to see how to use skeleton loading with Streaming in nextjs.
+- Good to introduce new concept for route: Route Groups
+
+## Chapter 10 - Partial Prerendering (New experimental feature in Nextjs)
+
+- This is a new experimental feature in nextjs.
+- They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
+
+Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+
+## Chapter 11 - Search and Pagination (Implementation and Debouncing)
 
 - Good visual explanation for app layout and pages.
 - Introduce root layout vs page layout concept.
   - Use root layout for modify html and body tag.
   - Page layout is for each page/route.
 
-## Chapter 5 - Navigating between pages
+## Chapter 5 - Navigating between pages (Link component and code splitting)
 
 - Explain how to use Link component and how to code splitting works.
 - Nice introduction for `use client` for detecting active link.
@@ -58,6 +90,7 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 
 - This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
 - The seed.js has been migrated to typescript and a logger has been added to the lib folder.
+```markdown
 - This chapter can be skipped if already familiar with using Postgres. Alternatives like Prisma/Drizzle can be considered.
 
 ## Chapter 7 - Fetching data
@@ -73,7 +106,9 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 - It seems the main focus is about `Server Components` which is [React beta feature](https://react.dev/reference/react/use-server).
 
 ## Chapter 8 - Static and Dynamic Rendering
+```
 
+```typescript
 - This chapter uses a unstable feature to support dynamic rendering.
 noStore();
 ```
@@ -89,6 +124,7 @@ import { unstable_noStore as noStore } from "next/cache";
 - They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
 
 Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+```
 
 ## Chapter 11 - Search and Pagination
 
@@ -118,7 +154,8 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 - This chapter is about how to implement search and pagination.
 - Good to introduce `use-debounce` library for handle debouncing for search input
 
-## Chapter 12 - Mutating Data
+```typescript
+## Chapter 12 - Mutating Data (Server action)
 
 - Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
 noStore();
@@ -132,7 +169,9 @@ noStore();
 - Good to introduce new concept for route: Route Groups
 
 ## Chapter 6 - DB
+```
 
+```markdown
 - This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
 - The seed.js has been migrated to typescript and a logger has been added to the lib folder.
 - This chapter can be skipped if already familiar with using Postgres. Alternatives like Prisma/Drizzle can be considered.
@@ -149,6 +188,7 @@ noStore();
 ## Chapter 7 - Fetching data (Referred to nextjs documentation for data fetching, caching, and revalidating)
 
 - Not focus on data fetching, need to refer to [nextjs documentation](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
+```
 - It seems the main focus is about `Server Components` which is [React beta feature](https://react.dev/reference/react/use-server).
 
 ## Chapter 8 - Static and Dynamic Rendering
@@ -169,12 +209,23 @@ noStore();
 - This is a new experimental feature in nextjs.
 - They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
 
+```markdown
 Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
 
 ## Chapter 11 - Search and Pagination
 
 - This chapter is about how to implement search and pagination.
 - Good to introduce `use-debounce` library for handle debouncing for search input
+
+## Chapter 12 - Mutating Data (Used server action to mutate data)
+
+- Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
+
+## Chapter 11 - Search and Pagination (Implemented search and pagination, introduced `use-debounce` library for handle debouncing for search input)
+
+- This chapter is about how to implement search and pagination.
+- Good to introduce `use-debounce` library for handle debouncing for search input
+```
 
 ## Chapter 12 - Mutating Data
 
