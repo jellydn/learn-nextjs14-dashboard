@@ -74,3 +74,8 @@ Actually, Remix has implemented similar feature for a [long time](https://x.com/
 
 - This chapter is about how to implement search and pagination.
 - Good to introduce `use-debounce` library for handle debouncing for search input
+
+## Chapter 12 - Mutating Data
+
+- Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
+- This chapter is about how to use server action to mutate data.
