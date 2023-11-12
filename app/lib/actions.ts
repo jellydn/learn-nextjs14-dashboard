@@ -111,6 +111,7 @@ export async function authenticate(
   formData: FormData,
 ) {
   try {
+    logger.info("authenticate - server action called");
     await signIn("credentials", Object.fromEntries(formData));
   } catch (error) {
     if ((error as Error).message.includes("CredentialsSignin")) {

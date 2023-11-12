@@ -69,7 +69,7 @@ export default function LoginForm() {
             <>
               <ExclamationCircleIcon className="w-5 h-5 text-red-500" />
               <p aria-live="polite" className="text-sm text-red-500">
-                Invalid credentials
+                Invalid credentials. Please try again.
               </p>
             </>
           )}
