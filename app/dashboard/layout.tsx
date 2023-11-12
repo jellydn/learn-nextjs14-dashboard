@@ -1,6 +1,6 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { readonly children: React.ReactNode }) {
   return (
     <div className="flex flex-col h-screen md:overflow-hidden md:flex-row">
       <div className="flex-none w-full md:w-64">

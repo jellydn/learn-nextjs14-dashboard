@@ -42,9 +42,9 @@ export function Card({
   value,
   type,
 }: {
-  title: string;
-  value: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
+  readonly title: string;
+  readonly value: number | string;
+  readonly type: "invoices" | "customers" | "pending" | "collected";
 }) {
   const Icon = iconMap[type];
 

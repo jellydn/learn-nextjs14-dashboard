@@ -24,12 +24,12 @@ export default function LoginForm() {
             </label>
             <div className="relative">
               <input
+                required
                 className="block pl-10 w-full text-sm rounded-md border border-gray-200 peer py-[9px] outline-2 placeholder:text-gray-500"
                 id="email"
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
-                required
               />
               <AtSymbolIcon className="absolute left-3 top-1/2 text-gray-500 -translate-y-1/2 pointer-events-none h-[18px] w-[18px] peer-focus:text-gray-900" />
             </div>
@@ -43,12 +43,12 @@ export default function LoginForm() {
             </label>
             <div className="relative">
               <input
+                required
                 className="block pl-10 w-full text-sm rounded-md border border-gray-200 peer py-[9px] outline-2 placeholder:text-gray-500"
                 id="password"
                 type="password"
                 name="password"
                 placeholder="Enter password"
-                required
                 minLength={6}
               />
               <KeyIcon className="absolute left-3 top-1/2 text-gray-500 -translate-y-1/2 pointer-events-none h-[18px] w-[18px] peer-focus:text-gray-900" />

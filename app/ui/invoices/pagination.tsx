@@ -8,7 +8,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 import { generatePagination } from "@/app/lib/utils";
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
+export default function Pagination({ totalPages }: { readonly totalPages: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
@@ -22,8 +22,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   };
 
   return (
-    <>
-      <div className="inline-flex">
+    <div className="inline-flex">
         <PaginationArrow
           direction="left"
           href={createPageURL(currentPage - 1)}
@@ -57,7 +56,6 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
           isDisabled={currentPage >= totalPages}
         />
       </div>
-    </>
   );
 }
 
@@ -67,10 +65,10 @@ function PaginationNumber({
   isActive,
   position,
 }: {
-  page: number | string;
-  href: string;
-  position?: "first" | "last" | "middle" | "single";
-  isActive: boolean;
+  readonly page: number | string;
+  readonly href: string;
+  readonly position?: "first" | "last" | "middle" | "single";
+  readonly isActive: boolean;
 }) {
   const className = clsx(
     "flex h-10 w-10 items-center justify-center text-sm border",
@@ -97,9 +95,9 @@ function PaginationArrow({
   direction,
   isDisabled,
 }: {
-  href: string;
-  direction: "left" | "right";
-  isDisabled?: boolean;
+  readonly href: string;
+  readonly direction: "left" | "right";
+  readonly isDisabled?: boolean;
 }) {
   const className = clsx(
     "flex h-10 w-10 items-center justify-center rounded-md border",
