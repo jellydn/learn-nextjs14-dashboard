@@ -79,3 +79,8 @@ Actually, Remix has implemented similar feature for a [long time](https://x.com/
 
 - Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
 - This chapter is about how to use server action to mutate data.
+
+## Chapter 13 - Handling Errors
+
+- How to handle error with try/catch and show on UI with error.tsx file.
+- How to use `notFound()` to handle 404 error.
