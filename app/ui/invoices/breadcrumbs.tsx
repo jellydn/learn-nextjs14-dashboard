@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { lusitana } from "@/app/ui/fonts";
 
-interface Breadcrumb {
+type Breadcrumb = {
   label: string;
   href: string;
   active?: boolean;
@@ -13,7 +13,7 @@ interface Breadcrumb {
 export default function Breadcrumbs({
   breadcrumbs,
 }: {
-  breadcrumbs: Breadcrumb[];
+  readonly breadcrumbs: Breadcrumb[];
 }) {
   return (
     <nav aria-label="Breadcrumb" className="block mb-6">

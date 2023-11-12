@@ -1,3 +1,4 @@
+ 
 "use client";
 
 import {
@@ -10,15 +11,17 @@ import {
 import Link from "next/link";
 
 import { updateInvoice } from "@/app/lib/actions";
-import { CustomerField, InvoiceForm } from "@/app/lib/definitions";
+import { type CustomerField, type InvoiceForm } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
+
+/* eslint-disable react/jsx-no-bind */
 
 export default function EditInvoiceForm({
   invoice,
   customers,
 }: {
-  invoice: InvoiceForm;
-  customers: CustomerField[];
+  readonly invoice: InvoiceForm;
+  readonly customers: CustomerField[];
 }) {
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 
@@ -37,7 +40,7 @@ export default function EditInvoiceForm({
               className="block py-2 pl-10 w-full text-sm rounded-md border border-gray-200 peer outline-2 placeholder:text-gray-500"
               defaultValue={invoice.customer_id}
             >
-              <option value="" disabled>
+              <option disabled value="">
                 Select a customer
               </option>
               {customers.map((customer) => (

@@ -10,10 +10,10 @@ import {
 import Link from "next/link";
 
 import { createInvoice } from "@/app/lib/actions";
-import { CustomerField } from "@/app/lib/definitions";
+import { type CustomerField } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+export default function Form({ customers }: { readonly customers: CustomerField[] }) {
   return (
     <form action={createInvoice}>
       <div className="p-4 bg-gray-50 rounded-md md:p-6">
@@ -29,7 +29,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               className="block py-2 pl-10 w-full text-sm rounded-md border border-gray-200 peer outline-2 placeholder:text-gray-500"
               defaultValue=""
             >
-              <option value="" disabled>
+              <option disabled value="">
                 Select a customer
               </option>
               {customers.map((customer) => (

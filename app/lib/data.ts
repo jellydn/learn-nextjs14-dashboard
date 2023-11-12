@@ -3,13 +3,13 @@ import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 
 import {
-  CustomerField,
-  CustomersTable,
-  InvoiceForm,
-  InvoicesTable,
-  LatestInvoiceRaw,
-  Revenue,
-  User,
+  type CustomerField,
+  type CustomerTable,
+  type InvoiceForm,
+  type InvoiceTable,
+  type LatestInvoiceRaw,
+  type Revenue,
+  type User,
 } from "./definitions";
 import logger from "./logger";
 import { formatCurrency } from "./utils";
@@ -28,7 +28,7 @@ export async function fetchRevenue() {
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
 
-    // logger.info("Data fetch complete after 3 seconds.");
+    // Logger.info("Data fetch complete after 3 seconds.");
 
     return data.rows;
   } catch (error) {
@@ -81,8 +81,12 @@ export async function fetchCardData() {
 
     const numberOfInvoices = Number(data[0].rows[0].count ?? "0");
     const numberOfCustomers = Number(data[1].rows[0].count ?? "0");
-    const totalPaidInvoices = formatCurrency(data[2].rows[0].paid ?? "0");
-    const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? "0");
+    const totalPaidInvoices = formatCurrency(
+      Number(data[2].rows[0].paid ?? "0"),
+    );
+    const totalPendingInvoices = formatCurrency(
+      Number(data[2].rows[0].pending ?? "0"),
+    );
 
     return {
       numberOfCustomers,
@@ -106,7 +110,7 @@ export async function fetchFilteredInvoices(
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
   try {
-    const invoices = await sql<InvoicesTable>`
+    const invoices = await sql<InvoiceTable>`
       SELECT
         invoices.id,
         invoices.amount,
@@ -207,7 +211,7 @@ export async function fetchFilteredCustomers(query: string) {
   noStore();
 
   try {
-    const data = await sql<CustomersTable>`
+    const data = await sql<CustomerTable>`
 		SELECT
 		  customers.id,
 		  customers.name,
