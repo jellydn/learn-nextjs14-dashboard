@@ -8,6 +8,8 @@
   </a>
 </p>
 
+[![IT Man - First Impressions: Diving into the Free Next.js 14 Course [Vietnamese]](https://i.ytimg.com/vi/ccV582wobvQ/hqdefault.jpg)](https://www.youtube.com/watch?v=ccV582wobvQ)
+
 ## About The Course
 
 Welcome to the "Next.js App Router Course - Starter." This repository serves as the starting point for your journey into building a sophisticated dashboard application with the latest features of Next.js 14.
