@@ -6,8 +6,8 @@
 - Key points from this chapter:
   - Explanation of the overall project structure.
   - Usage of Typescript.
-- The import with '@/' convention for CSS file could be improved for better navigation.
-- I don't like the import with '@/' convention for CSS file as it's not working nice. It doesn't jump to file on click.
+- The import with '@/' convention for CSS files could be improved for better navigation.
+- The '@/' convention for CSS file imports does not allow for file navigation on click.
 
 P/S: The absolute path for TS/JS file is working fine.
 
