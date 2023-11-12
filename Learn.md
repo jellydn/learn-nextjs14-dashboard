@@ -6,10 +6,9 @@
 - Key points from this chapter:
   - Explanation of the overall project structure.
   - Usage of Typescript.
-- The import with '@/' convention for CSS files could be improved for better navigation.
-- The '@/' convention for CSS file imports does not allow for file navigation on click.
-
-P/S: The absolute path for TS/JS file is working fine.
+- Improve '@/' convention for CSS file imports for better navigation.
+- Fix '@/' convention for CSS file imports to allow file navigation on click.
+- Confirm absolute path for TS/JS file is working fine.
 
 ## Chapter 3 - Optimizing Fonts and Images
 
@@ -17,10 +16,8 @@ P/S: The absolute path for TS/JS file is working fine.
 - Explain how to use Google Font with nextjs.
 - Explain how to use Image component with Tailwind CSS for swapping image between different screen sizes.
 
-## Chapter 4 - Layouts and Pages
-
-- Good visual explanation for app layout and pages.
-- Introduce root layout vs page layout concept.
+- Provide visual explanation for app layout and pages.
+- Introduce `use client` for detecting active link.
   - Use root layout for modify html and body tag.
   - Page layout is for each page/route.
 
@@ -33,7 +30,8 @@ P/S: The absolute path for TS/JS file is working fine.
 
 - This chapter is about how to use @vercel/postgres to connect to Postgres DB and populate the database.
 - The seed.js has been migrated to typescript and a logger has been added to the lib folder.
-- This chapter can be skipped if already familiar with using Postgres. Alternatives like Prisma/Drizzle can be considered.
+- Skip this chapter if already familiar with using Postgres. Consider alternatives like Prisma/Drizzle.
+- Focus on `Server Components`, a [React beta feature](https://react.dev/reference/react/use-server).
 
 ## Chapter 7 - Fetching data
 
@@ -52,17 +50,16 @@ import { unstable_noStore as noStore } from "next/cache";
 noStore();
 ```
 
-- When use Promise.all, the slowest promise will determine the speed of the response.
-
-## Chapter 9 - Streaming
-
-- Nice to see how to use skeleton loading with Streaming in nextjs.
-- Good to introduce new concept for route: Route Groups
+- Understand that when using Promise.all, the slowest promise determines the speed of the response.
+- Learn how to use skeleton loading with Streaming in nextjs.
+- Introduce new concept for route: Route Groups
 
 ## Chapter 10 - Partial Prerendering
 
 - This is a new experimental feature in nextjs.
-- They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
+- Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model) for explanation of this feature.
+- Introduce `use-debounce` library for handling debouncing for search input.
+- Understand that Server action is an experimental feature in [React](https://react.dev/reference/react/use-server).
 
 Remix has had a similar feature for some time. For comparison, refer to: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
 
@@ -84,9 +81,9 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 ## Chapter 14 - Validation & Accessibility
 
 - How to use experimental hook: [useFormState](https://react.dev/reference/react-dom/hooks/useFormState#useformstate) for validation.
-- Nice to introduce accessibility concept with `aria-describedby`.
+- Introduce accessibility concept with `aria-describedby`.
 
 ## Chapter 15 - Authentication
 
 - How to use next-auth for authentication.
-- This also bring new hook for form: [useFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus)
+- Introduce new hook for form: [useFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus).
