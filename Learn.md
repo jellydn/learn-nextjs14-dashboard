@@ -75,3 +75,8 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 
 - Server action is experimental feature in [React](https://react.dev/reference/react/use-server)
 - This chapter is about how to use server action to mutate data.
+
+## Chapter 13 - Handling Errors
+
+- How to handle error with try/catch and show on UI with error.tsx file.
+- How to use `notFound()` to handle 404 error.
