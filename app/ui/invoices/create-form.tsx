@@ -6,6 +6,7 @@ import {
   CurrencyDollarIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
+import { type Metadata } from "next";
 import { useFormState } from "react-dom";
 
 import Link from "next/link";
@@ -13,6 +14,10 @@ import Link from "next/link";
 import { createInvoice } from "@/app/lib/actions";
 import { type CustomerField } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
+
+export const metadata: Metadata = {
+  title: "Create Invoice | Acme Dashboard",
+};
 
 export default function CreateForm({
   customers,
