@@ -69,3 +69,8 @@ noStore();
 - They have a nice explanation for this feature. Refer to blog post [here](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model).
 
 Actually, Remix has implemented similar feature for a [long time](https://x.com/ryanflorence/status/1719743537380786198?s=20). Definitely worth to check out this copare: [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
+
+## Chapter 11 - Search and Pagination
+
+- This chapter is about how to implement search and pagination.
+- Good to introduce `use-debounce` library for handle debouncing for search input
