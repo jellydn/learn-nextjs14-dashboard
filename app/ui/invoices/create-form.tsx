@@ -14,7 +14,7 @@ import { createInvoice } from "@/app/lib/actions";
 import { type CustomerField } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
 
-export default function Form({
+export default function CreateForm({
   customers,
 }: {
   readonly customers: CustomerField[];
