@@ -10,29 +10,54 @@ import logger from "./logger";
 
 const InvoiceSchema = z.object({
   id: z.string(),
-  customerId: z.string(),
-  amount: z.coerce.number(),
-  status: z.enum(["pending", "paid"]),
+  customerId: z.string({
+    invalid_type_error: "Please select a customer.",
+  }),
+  amount: z.coerce
+    .number()
+    .gt(0, { message: "Please enter an amount greater than $0." }),
+  status: z.enum(["pending", "paid"], {
+    invalid_type_error: "Please select an invoice status.",
+  }),
   date: z.string(),
 });
 
 const CreateInvoice = InvoiceSchema.omit({ id: true, date: true });
 const UpdateInvoice = InvoiceSchema.omit({ date: true, id: true });
 
-export async function createInvoice(formData: FormData) {
+// This is temporary until @types/react-dom is updated
+export type State = {
+  errors?: {
+    customerId?: string[];
+    amount?: string[];
+    status?: string[];
+  };
+  message?: string | undefined;
+};
+
+export async function createInvoice(prevState: State, formData: FormData) {
   const rawFormData = Object.fromEntries(formData.entries());
 
   logger.info("createInvoice - server action called");
-  const data = CreateInvoice.parse(rawFormData);
-  logger.info(data);
+  const invoiceFormData = CreateInvoice.safeParse(rawFormData);
+  logger.info(invoiceFormData);
 
-  const amountInCents = data.amount * 100;
+  // If form validation fails, return errors early. Otherwise, continue.
+  if (!invoiceFormData.success) {
+    return {
+      errors: invoiceFormData.error.flatten().fieldErrors,
+      message: "Missing Fields. Failed to Create Invoice.",
+    };
+  }
+
+  const { customerId, amount, status } = invoiceFormData.data;
+  const amountInCents = amount * 100;
   const date = new Date().toISOString().split("T")[0];
 
   try {
     await sql`
     INSERT INTO invoices (customer_id, amount, status, date)
-    VALUES (${data.customerId}, ${amountInCents}, ${data.status}, ${date})
+    VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
   `;
   } catch (e) {
     logger.error(e);
