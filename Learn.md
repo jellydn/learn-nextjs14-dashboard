@@ -90,3 +90,7 @@ Remix has had a similar feature for some time. For comparison, refer to: [Next.j
 
 - How to use next-auth for authentication.
 - This also bring new hook for form: [useFormStatus](https://react.dev/reference/react-dom/hooks/useFormStatus)
+
+## Chapter 16 - Metadata
+
+- This technique is useful for SEO.

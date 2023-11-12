@@ -43,6 +43,7 @@ This document captures insights on setting up Next.js with TypeScript, styling w
 - [Next.js 13 vs Remix: An In-depth case study](https://prateeksurana.me/blog/nextjs-13-vs-remix-an-in-depth-case-study/)
 - [Building towards a new default rendering model for web applications – Vercel](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model)
 - [Server Action – React](https://react.dev/reference/react/use-server)
+- [Metadata with Next.js](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
 
 ## Show your support
 
