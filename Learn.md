@@ -84,3 +84,8 @@ Actually, Remix has implemented similar feature for a [long time](https://x.com/
 
 - How to handle error with try/catch and show on UI with error.tsx file.
 - How to use `notFound()` to handle 404 error.
+
+## Chapter 14 - Validation & Accessibility
+
+- How to use experimental hook: [use-form-state](https://react.dev/reference/react-dom/hooks/useFormState#useformstate) for validation.
+- Nice to introduce accessibility concept with `aria-describedby`.
