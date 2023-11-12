@@ -24,7 +24,7 @@ export default function Form({
   const [state, dispatch] = useFormState(createInvoice, initialState);
 
   return (
-    <form action={dispatch}>
+    <form action={createInvoice}>
       <div className="p-4 bg-gray-50 rounded-md md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
