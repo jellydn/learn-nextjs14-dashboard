@@ -36,7 +36,7 @@ npm run dev
 
 Dive into my learning journey and the key takeaways from this course:
 
-- [My Learning Notes](./Learning.md)
+- [My Learning Notes](./Learn.md)
 
 This document captures insights on setting up Next.js with TypeScript, styling with Tailwind CSS, optimizing assets, and more, along with my personal observations and preferences.
 

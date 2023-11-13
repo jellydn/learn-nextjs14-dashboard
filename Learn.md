@@ -8,6 +8,11 @@
 - Key points from this chapter:
   - Explanation of the overall project structure.
   - Usage of Typescript.
+
+## Chapter 2 - CSS styling
+
+- Explain how to use Tailwind CSS or CSS Modules.
+- Good to introduce `clsx` to combine multiple class names
 - The import with '@/' convention for CSS files could be improved for better navigation.
 - The '@/' convention for CSS file imports does not allow for file navigation on click.
 
