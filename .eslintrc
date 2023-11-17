@@ -3,6 +3,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "ignorePatterns": ["dist", ".eslintrc", "next.config.js"],
   "rules": {
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-unsafe-return": "warn",
