@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { EyeIcon } from "@heroicons/react/24/outline";
 
-import {
-  type CustomerTable,
-  type FormattedCustomersTable,
-} from "@/app/lib/definitions";
+import Image from "next/image";
+import Link from "next/link";
+
+import { type FormattedCustomersTable } from "@/app/lib/definitions";
 import { lusitana } from "@/app/ui/fonts";
 import Search from "@/app/ui/search";
 
@@ -30,21 +30,23 @@ export default async function CustomersTable({
                   >
                     <div className="flex justify-between items-center pb-4 border-b">
                       <div>
-                        <div className="flex items-center mb-2">
-                          <div className="flex gap-3 items-center">
-                            <Image
-                              src={customer.image_url}
-                              className="rounded-full"
-                              alt={`${customer.name}'s profile picture`}
-                              width={28}
-                              height={28}
-                            />
-                            <p>{customer.name}</p>
+                        <Link href={`/dashboard/customers/${customer.id}`}>
+                          <div className="flex items-center mb-2">
+                            <div className="flex gap-3 items-center">
+                              <Image
+                                src={customer.image_url}
+                                className="rounded-full"
+                                alt={`${customer.name}'s profile picture`}
+                                width={28}
+                                height={28}
+                              />
+                              <p>{customer.name}</p>
+                            </div>
                           </div>
-                        </div>
-                        <p className="text-sm text-gray-500">
-                          {customer.email}
-                        </p>
+                          <p className="text-sm text-gray-500">
+                            {customer.email}
+                          </p>
+                        </Link>
                       </div>
                     </div>
                     <div className="flex justify-between items-center py-5 w-full border-b">
@@ -81,6 +83,9 @@ export default async function CustomersTable({
                     <th scope="col" className="py-5 px-4 font-medium">
                       Total Paid
                     </th>
+                    <th scope="col" className="py-5 px-4 font-medium">
+                      Actions
+                    </th>
                   </tr>
                 </thead>
 
@@ -108,8 +113,14 @@ export default async function CustomersTable({
                       <td className="py-5 px-4 text-sm whitespace-nowrap bg-white">
                         {customer.total_pending}
                       </td>
-                      <td className="py-5 px-4 text-sm whitespace-nowrap bg-white group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                      <td className="py-5 px-4 text-sm whitespace-nowrap bg-white">
                         {customer.total_paid}
+                      </td>
+                      <td className="py-5 px-4 text-sm whitespace-nowrap bg-white group-first-of-type:rounded-md group-last-of-type:rounded-md">
+                        <Link href={`/dashboard/customers/${customer.id}`}>
+                          <span className="sr-only">View</span>
+                          <EyeIcon className="w-5" />
+                        </Link>
                       </td>
                     </tr>
                   ))}
