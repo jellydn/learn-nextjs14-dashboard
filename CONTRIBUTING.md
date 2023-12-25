@@ -12,4 +12,6 @@ Commit messages are an essential part of the development process. They provide a
 - Start the message with a capital letter.
 - Do not end the message with a period.
 
+- The commit message for code changes also applies to changes in the package-lock.json file. Therefore, it's crucial to follow the above guidelines when writing commit messages.
+
 For more information about the project and how to get it up and running, please refer to the [README.md](./README.md) file.
