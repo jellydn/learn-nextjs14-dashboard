@@ -19,8 +19,8 @@
   "dependencies": {
     "@heroicons/react": "2.1.1",
     "@tailwindcss/forms": "0.5.7",
-    "@types/node": "20.11.5",
-    "@vercel/postgres": "0.7.1",
+    "@types/node": "20.11.6",
+    "@vercel/postgres": "0.7.2",
     "autoprefixer": "10.4.17",
     "bcrypt": "5.1.1",
     "clsx": "2.1.0",
