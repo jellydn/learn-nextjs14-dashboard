@@ -13,7 +13,8 @@
   "nano-staged": {
     "*.{js,ts,json,md}": "prettier --write",
     "*.{js,ts,tsx}": [
-      "eslint --fix"
+      "eslint --fix",
+      "echo 'Update next-auth version from 5.0.0-beta.8 to 5.0.0-beta.9'"
     ]
   },
   "dependencies": {
