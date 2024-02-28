@@ -2,6 +2,7 @@
   "name": "learn-nextjs14",
   "private": true,
   "scripts": {
+    "commit-msg": "Updated package-lock and package.json files with meaningful changes"
     "build": "next build",
     "dev": "next dev",
     "postinstall": "npx husky install",
