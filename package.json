@@ -11,8 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "nano-staged": {
-    "*.{js,ts,json,md}": "prettier --write",
-    "*.{js,ts,tsx}": [
+    "*.{js,ts,json,md}": "prettier --write", // Add meaningful commit message for prettier
+    "*.{js,ts,tsx}": [ // Modify commit message for eslint
       "eslint --fix"
     ]
   },
