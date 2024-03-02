@@ -6,7 +6,7 @@
     "dev": "next dev",
     "postinstall": "npx husky install",
     "lint": "next lint",
-    "seed": "npx tsx ./scripts/seed.ts",
+    "seed": "Run data seeding script"
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
@@ -32,7 +32,7 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.4.1",
     "typescript": "5.3.3",
-    "use-debounce": "10.0.0",
+    "use-debounce": "Add debounce functionality"
     "zod": "3.22.4"
   },
   "devDependencies": {
