@@ -1,18 +1,18 @@
-import Image from "next/image";
+import Image from 'next/image'
 
-import { fetchFilteredInvoices } from "@/app/lib/data";
-import { formatCurrency, formatDateToLocal } from "@/app/lib/utils";
-import { DeleteInvoice, UpdateInvoice } from "@/app/ui/invoices/buttons";
-import InvoiceStatus from "@/app/ui/invoices/status";
+import { fetchFilteredInvoices } from '@/app/lib/data'
+import { formatCurrency, formatDateToLocal } from '@/app/lib/utils'
+import { DeleteInvoice, UpdateInvoice } from '@/app/ui/invoices/buttons'
+import InvoiceStatus from '@/app/ui/invoices/status'
 
 export default async function InvoicesTable({
   query,
   currentPage,
 }: {
-  query: string;
-  currentPage: number;
+  query: string
+  currentPage: number
 }) {
-  const invoices = await fetchFilteredInvoices(query, currentPage);
+  const invoices = await fetchFilteredInvoices(query, currentPage)
 
   return (
     <div className="flow-root mt-6">
@@ -121,5 +121,5 @@ export default async function InvoicesTable({
         </div>
       </div>
     </div>
-  );
+  )
 }

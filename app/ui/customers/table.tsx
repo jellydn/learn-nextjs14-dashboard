@@ -1,16 +1,16 @@
-import { EyeIcon } from "@heroicons/react/24/outline";
+import { EyeIcon } from '@heroicons/react/24/outline'
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { type FormattedCustomersTable } from "@/app/lib/definitions";
-import { lusitana } from "@/app/ui/fonts";
-import Search from "@/app/ui/search";
+import type { FormattedCustomersTable } from '@/app/lib/definitions'
+import { lusitana } from '@/app/ui/fonts'
+import Search from '@/app/ui/search'
 
 export default async function CustomersTable({
   customers,
 }: {
-  customers: FormattedCustomersTable[];
+  customers: FormattedCustomersTable[]
 }) {
   return (
     <div className="w-full">
@@ -131,5 +131,5 @@ export default async function CustomersTable({
         </div>
       </div>
     </div>
-  );
+  )
 }

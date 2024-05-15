@@ -1,6 +1,6 @@
 // Loading animation
 const shimmer =
-  "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent";
+  'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent'
 
 export function CardSkeleton() {
   return (
@@ -15,7 +15,7 @@ export function CardSkeleton() {
         <div className="w-20 h-7 bg-gray-200 rounded-md" />
       </div>
     </div>
-  );
+  )
 }
 
 export function CardsSkeleton() {
@@ -26,7 +26,7 @@ export function CardsSkeleton() {
       <CardSkeleton />
       <CardSkeleton />
     </>
-  );
+  )
 }
 
 export function RevenueChartSkeleton() {
@@ -41,7 +41,7 @@ export function RevenueChartSkeleton() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export function InvoiceSkeleton() {
@@ -56,7 +56,7 @@ export function InvoiceSkeleton() {
       </div>
       <div className="mt-2 w-12 h-4 bg-gray-200 rounded-md" />
     </div>
-  );
+  )
 }
 
 export function LatestInvoicesSkeleton() {
@@ -79,7 +79,7 @@ export function LatestInvoicesSkeleton() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default function DashboardSkeleton() {
@@ -99,7 +99,7 @@ export default function DashboardSkeleton() {
         <LatestInvoicesSkeleton />
       </div>
     </>
-  );
+  )
 }
 
 export function TableRowSkeleton() {
@@ -136,7 +136,7 @@ export function TableRowSkeleton() {
         </div>
       </td>
     </tr>
-  );
+  )
 }
 
 export function InvoicesMobileSkeleton() {
@@ -160,7 +160,7 @@ export function InvoicesMobileSkeleton() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export function InvoicesTableSkeleton() {
@@ -214,5 +214,5 @@ export function InvoicesTableSkeleton() {
         </div>
       </div>
     </div>
-  );
+  )
 }

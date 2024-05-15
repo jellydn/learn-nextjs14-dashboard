@@ -1,13 +1,13 @@
-import { type Metadata } from "next";
+import type { Metadata } from 'next'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import AcmeLogo from "@/app/ui/acme-logo";
-import LoginForm from "@/app/ui/login-form";
+import AcmeLogo from '@/app/ui/acme-logo'
+import LoginForm from '@/app/ui/login-form'
 
 export const metadata: Metadata = {
-  title: "Login | Acme Dashboard",
-};
+  title: 'Login | Acme Dashboard',
+}
 
 export default function LoginPage() {
   return (
@@ -23,5 +23,5 @@ export default function LoginPage() {
         <LoginForm />
       </div>
     </main>
-  );
+  )
 }

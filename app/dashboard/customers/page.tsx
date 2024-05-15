@@ -1,22 +1,22 @@
-import { type Metadata } from "next";
-import { Suspense } from "react";
+import type { Metadata } from 'next'
+import { Suspense } from 'react'
 
-import { fetchFilteredCustomers } from "@/app/lib/data";
-import CustomersTable from "@/app/ui/customers/table";
+import { fetchFilteredCustomers } from '@/app/lib/data'
+import CustomersTable from '@/app/ui/customers/table'
 
 export const metadata: Metadata = {
-  title: "Customers | Acme Dashboard",
-};
+  title: 'Customers | Acme Dashboard',
+}
 
 export default async function Page({
   searchParams,
 }: {
   searchParams?: {
-    query?: string;
-  };
+    query?: string
+  }
 }) {
-  const query = searchParams?.query ?? "";
-  const customers = await fetchFilteredCustomers(query);
+  const query = searchParams?.query ?? ''
+  const customers = await fetchFilteredCustomers(query)
 
   return (
     <div className="w-full">
@@ -24,5 +24,5 @@ export default async function Page({
         <CustomersTable customers={customers} />
       </Suspense>
     </div>
-  );
+  )
 }

@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
-import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
+import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { deleteInvoice } from "@/app/lib/actions";
+import { deleteInvoice } from '@/app/lib/actions'
 
 export function CreateInvoice() {
   return (
@@ -11,10 +11,10 @@ export function CreateInvoice() {
       href="/dashboard/invoices/create"
       className="flex items-center px-4 h-10 text-sm font-medium text-white bg-blue-600 rounded-lg transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
     >
-      <span className="hidden md:block">Create Invoice</span>{" "}
+      <span className="hidden md:block">Create Invoice</span>{' '}
       <PlusIcon className="h-5 md:ml-4" />
     </Link>
-  );
+  )
 }
 
 export function UpdateInvoice({ id }: { readonly id: string }) {
@@ -25,11 +25,11 @@ export function UpdateInvoice({ id }: { readonly id: string }) {
     >
       <PencilIcon className="w-5" />
     </Link>
-  );
+  )
 }
 
 export function DeleteInvoice({ id }: { readonly id: string }) {
-  const deleteInvoiceWithId = deleteInvoice.bind(null, id);
+  const deleteInvoiceWithId = deleteInvoice.bind(null, id)
 
   return (
     <form action={deleteInvoiceWithId}>
@@ -38,5 +38,5 @@ export function DeleteInvoice({ id }: { readonly id: string }) {
         <TrashIcon className="w-5" />
       </button>
     </form>
-  );
+  )
 }

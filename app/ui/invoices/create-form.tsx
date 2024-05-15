@@ -1,32 +1,32 @@
-"use client";
+'use client'
 
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from "@heroicons/react/24/outline";
-import { type Metadata } from "next";
-import { useFormState } from "react-dom";
+} from '@heroicons/react/24/outline'
+import type { Metadata } from 'next'
+import { useFormState } from 'react-dom'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { createInvoice } from "@/app/lib/actions";
-import { type CustomerField } from "@/app/lib/definitions";
-import { Button } from "@/app/ui/button";
+import { createInvoice } from '@/app/lib/actions'
+import type { CustomerField } from '@/app/lib/definitions'
+import { Button } from '@/app/ui/button'
 
 export const metadata: Metadata = {
-  title: "Create Invoice | Acme Dashboard",
-};
+  title: 'Create Invoice | Acme Dashboard',
+}
 
 export default function CreateForm({
   customers,
 }: {
-  readonly customers: CustomerField[];
+  readonly customers: CustomerField[]
 }) {
-  const initialState = { message: null, errors: {} };
+  const initialState = { message: null, errors: {} }
   // @ts-expect-error this is beta feature
-  const [state, dispatch] = useFormState(createInvoice, initialState);
+  const [state, dispatch] = useFormState(createInvoice, initialState)
 
   return (
     <form action={dispatch}>
@@ -44,7 +44,7 @@ export default function CreateForm({
               defaultValue=""
               aria-describedby="customer-error"
             >
-              <option disabled value="">
+              <option disabled={true} value="">
                 Select a customer
               </option>
               {customers.map((customer) => (
@@ -167,5 +167,5 @@ export default function CreateForm({
         <Button type="submit">Create Invoice</Button>
       </div>
     </form>
-  );
+  )
 }

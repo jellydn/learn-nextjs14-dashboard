@@ -1,30 +1,30 @@
-import { type Metadata } from "next";
-import { Suspense } from "react";
+import type { Metadata } from 'next'
+import { Suspense } from 'react'
 
-import { fetchInvoicesPages } from "@/app/lib/data";
-import { lusitana } from "@/app/ui/fonts";
-import { CreateInvoice } from "@/app/ui/invoices/buttons";
-import Pagination from "@/app/ui/invoices/pagination";
-import InvoicesTable from "@/app/ui/invoices/table";
-import Search from "@/app/ui/search";
-import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
+import { fetchInvoicesPages } from '@/app/lib/data'
+import { lusitana } from '@/app/ui/fonts'
+import { CreateInvoice } from '@/app/ui/invoices/buttons'
+import Pagination from '@/app/ui/invoices/pagination'
+import InvoicesTable from '@/app/ui/invoices/table'
+import Search from '@/app/ui/search'
+import { InvoicesTableSkeleton } from '@/app/ui/skeletons'
 
 export const metadata: Metadata = {
-  title: "Invoices | Acme Dashboard",
-};
+  title: 'Invoices | Acme Dashboard',
+}
 
 export default async function Page({
   searchParams,
 }: {
   searchParams?: {
-    query?: string;
-    page?: string;
-  };
+    query?: string
+    page?: string
+  }
 }) {
-  const query = searchParams?.query ?? "";
-  const currentPage = Number(searchParams?.page) || 1;
+  const query = searchParams?.query ?? ''
+  const currentPage = Number(searchParams?.page) || 1
 
-  const totalPages = await fetchInvoicesPages(query);
+  const totalPages = await fetchInvoicesPages(query)
 
   return (
     <div className="w-full">
@@ -42,5 +42,5 @@ export default async function Page({
         <Pagination totalPages={totalPages} />
       </div>
     </div>
-  );
+  )
 }

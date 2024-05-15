@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-import logger from "@/app/lib/logger";
+import logger from '@/app/lib/logger'
 
 export default function ErrorPage({
   error,
   reset,
 }: {
-  readonly error: Error & { digest?: string };
-  readonly reset: () => void;
+  readonly error: Error & { digest?: string }
+  readonly reset: () => void
 }) {
   useEffect(() => {
     // Optionally log the error to an error reporting service
-    logger.error(error);
-  }, [error]);
+    logger.error(error)
+  }, [error])
 
   return (
     <main className="flex flex-col justify-center items-center h-full">
@@ -25,12 +25,12 @@ export default function ErrorPage({
         onClick={
           // Attempt to recover by trying to re-render the invoices route
           () => {
-            reset();
+            reset()
           }
         }
       >
         Try again
       </button>
     </main>
-  );
+  )
 }

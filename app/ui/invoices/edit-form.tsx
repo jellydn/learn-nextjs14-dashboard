@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
 import {
   CheckIcon,
   ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
-} from "@heroicons/react/24/outline";
+} from '@heroicons/react/24/outline'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { updateInvoice } from "@/app/lib/actions";
-import { type CustomerField, type InvoiceForm } from "@/app/lib/definitions";
-import { Button } from "@/app/ui/button";
+import { updateInvoice } from '@/app/lib/actions'
+import type { CustomerField, InvoiceForm } from '@/app/lib/definitions'
+import { Button } from '@/app/ui/button'
 
 /* eslint-disable react/jsx-no-bind */
 
@@ -19,10 +19,10 @@ export default function EditInvoiceForm({
   invoice,
   customers,
 }: {
-  readonly invoice: InvoiceForm;
-  readonly customers: CustomerField[];
+  readonly invoice: InvoiceForm
+  readonly customers: CustomerField[]
 }) {
-  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id)
 
   return (
     <form action={updateInvoiceWithId}>
@@ -34,13 +34,13 @@ export default function EditInvoiceForm({
           </label>
           <div className="relative">
             <select
-              required
+              required={true}
               id="customer"
               name="customerId"
               className="block py-2 pl-10 w-full text-sm rounded-md border border-gray-200 peer outline-2 placeholder:text-gray-500"
               defaultValue={invoice.customer_id}
             >
-              <option disabled value="">
+              <option disabled={true} value="">
                 Select a customer
               </option>
               {customers.map((customer) => (
@@ -61,7 +61,7 @@ export default function EditInvoiceForm({
           <div className="relative mt-2 rounded-md">
             <div className="relative">
               <input
-                required
+                required={true}
                 id="amount"
                 name="amount"
                 type="number"
@@ -83,12 +83,12 @@ export default function EditInvoiceForm({
             <div className="flex gap-4">
               <div className="flex items-center">
                 <input
-                  required
+                  required={true}
                   id="pending"
                   name="status"
                   type="radio"
                   value="pending"
-                  defaultChecked={invoice.status === "pending"}
+                  defaultChecked={invoice.status === 'pending'}
                   className="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:ring-offset-gray-800 focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-600"
                 />
                 <label
@@ -100,12 +100,12 @@ export default function EditInvoiceForm({
               </div>
               <div className="flex items-center">
                 <input
-                  required
+                  required={true}
                   id="paid"
                   name="status"
                   type="radio"
                   value="paid"
-                  defaultChecked={invoice.status === "paid"}
+                  defaultChecked={invoice.status === 'paid'}
                   className="w-4 h-4 text-gray-600 bg-gray-100 border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:ring-offset-gray-800 focus:ring-2 focus:ring-gray-500 dark:focus:ring-gray-600"
                 />
                 <label
@@ -129,5 +129,5 @@ export default function EditInvoiceForm({
         <Button type="submit">Edit Invoice</Button>
       </div>
     </form>
-  );
+  )
 }

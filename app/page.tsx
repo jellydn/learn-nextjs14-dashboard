@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
 
-import AcmeLogo from "@/app/ui/acme-logo";
+import AcmeLogo from '@/app/ui/acme-logo'
 
-import { lusitana } from "./ui/fonts";
-import styles from "./ui/home.module.css";
+import { lusitana } from './ui/fonts'
+import styles from './ui/home.module.css'
 
 export default function Page() {
   return (
@@ -18,7 +18,7 @@ export default function Page() {
           <p
             className={`text-xl text-gray-800 md:text-3xl md:leading-normal ${lusitana.className}`}
           >
-            <strong>Welcome to Acme.</strong> This is the example for the{" "}
+            <strong>Welcome to Acme.</strong> This is the example for the{' '}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
             </a>
@@ -49,5 +49,5 @@ export default function Page() {
         </div>
       </div>
     </main>
-  );
+  )
 }

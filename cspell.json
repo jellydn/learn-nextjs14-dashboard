@@ -5,18 +5,11 @@
   "globRoot": ".",
   "dictionaryDefinitions": [
     {
-      "name": "nextjs",
-      "path": "./nextjs.txt",
+      "name": "cspell-tool",
+      "path": "./cspell-tool.txt",
       "addWords": true
     }
   ],
-  "dictionaries": [
-    "nextjs"
-  ],
-  "ignorePaths": [
-    "node_modules",
-    "dist",
-    "build",
-    "/nextjs.txt"
-  ]
+  "dictionaries": ["cspell-tool"],
+  "ignorePaths": ["node_modules", "dist", "build", "/cspell-tool.txt"]
 }
