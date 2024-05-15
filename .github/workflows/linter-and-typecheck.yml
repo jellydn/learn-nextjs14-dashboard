@@ -17,14 +17,14 @@ jobs:
       - id: checkout
         name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - uses: bahmutov/npm-install@v1
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
       - id: Typecheck
         name: Checking Typescript Error
         run: |
-          npm run typecheck
+          bun run typecheck
   linter:
     runs-on: ubuntu-latest
     continue-on-error: true
@@ -34,11 +34,11 @@ jobs:
       - id: checkout
         name: Checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - uses: bahmutov/npm-install@v1
+      - name: Install bun
+        uses: oven-sh/setup-bun@v1
+      - name: Install dependencies
+        run: bun install
       - id: linter
         name: Linter check
         run: |
-          npm run lint
+          bun run lint
